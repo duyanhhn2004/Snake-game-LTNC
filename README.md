@@ -1,1 +1,1 @@
-# Snake-game-LTNC
+# Tony-s-maze-LTNC
