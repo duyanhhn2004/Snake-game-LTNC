@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1722789015 source:d:\tony - s -maze\header.cpp
+	<iostream>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"header.h"
+	<SDL.h>
+	<SDL_ttf.h>
+
+1722788784 d:\tony - s -maze\header.h
+	<iostream>
+	<SDL.h>
+
+1722788784 source:d:\tony - s -maze\main.cpp
+	<iostream>
+	<SDL.h>
+	"header.h"
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<vector>
+
