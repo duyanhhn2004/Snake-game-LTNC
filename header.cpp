@@ -64,3 +64,61 @@ SDL_Texture* loadTexture(string path, SDL_Renderer* renderer)
     }
     return newTexture;
 }
+bool CrashInto(int x, int y, int w, int h, int ox, int oy, int ow, int oh) // kiểm tra va chạm
+{
+    bool flag = false;
+    if(x + w > ox && x < ox + ow && y + h > oy && y < oy + oh)
+        flag = true;
+    return flag;
+}
+void setColor(SDL_Renderer* renderer, string s)
+{
+        if(s == "AliceBlue")
+            SDL_SetRenderDrawColor(renderer, 240, 248, 255, 1);
+        else if(s == "AntiqueWhile")
+            SDL_SetRenderDrawColor(renderer, 250, 235, 215, 1);
+        else if(s == "Aqua")
+            SDL_SetRenderDrawColor(renderer, 0, 255, 255, 1);
+        else if(s == "Aquamarine")
+            SDL_SetRenderDrawColor(renderer, 127, 255, 212, 1);
+        else if(s == "Azure")
+            SDL_SetRenderDrawColor(renderer, 240, 255, 255, 1);
+        else if(s == "Beige")
+            SDL_SetRenderDrawColor(renderer, 245, 245, 220, 1);
+        else if(s == "Bisque")
+            SDL_SetRenderDrawColor(renderer, 255, 228, 196, 1);
+        else if(s == "Black")
+            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 1);
+        else if(s == "BlanchedAlmond")
+            SDL_SetRenderDrawColor(renderer, 255, 235, 205, 1);
+        else if(s == "Blue")
+            SDL_SetRenderDrawColor(renderer, 0, 0, 255, 1);
+        else if(s == "BlueViolet")
+            SDL_SetRenderDrawColor(renderer, 138, 43, 226, 1);
+        else if(s == "Brown")
+            SDL_SetRenderDrawColor(renderer, 165, 42, 42, 1);
+        else if(s == "Chocolate")
+            SDL_SetRenderDrawColor(renderer, 210, 105, 30, 1);
+        else if(s == "Coral")
+            SDL_SetRenderDrawColor(renderer, 255, 127, 80, 1);
+        else if(s == "CornflowerBlue")
+            SDL_SetRenderDrawColor(renderer, 100, 149, 237, 1);
+        else if(s == "DarkCyan")
+            SDL_SetRenderDrawColor(renderer, 0, 139, 139, 1);
+        else if(s == "DarkGreen")
+            SDL_SetRenderDrawColor(renderer, 0, 100, 0, 1);
+        else if(s == "DarkOliveGreen")
+            SDL_SetRenderDrawColor(renderer, 85, 107, 47, 1);
+        else if(s == "DarkOrange")
+            SDL_SetRenderDrawColor(renderer, 255, 140, 0, 1);
+        else if(s == "DeepPink")
+            SDL_SetRenderDrawColor(renderer, 255, 20, 147, 1);
+        else if(s == "FireBrick")
+            SDL_SetRenderDrawColor(renderer, 178, 34, 34, 1);
+        else if(s == "ForestGreen")
+            SDL_SetRenderDrawColor(renderer, 34, 139, 34, 1);
+        else if(s == "Green")
+            SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+        else
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+}
