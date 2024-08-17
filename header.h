@@ -13,3 +13,4 @@ void waitUntilKeyPressed();
 
 SDL_Texture* loadTexture(string path, SDL_Renderer* renderer);
 bool CrashInto(int x, int y, int w, int h, int ox, int oy, int ow, int oh);
+void setColor(SDL_Renderer* renderer, string s);
