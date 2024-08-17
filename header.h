@@ -16,3 +16,4 @@ bool CrashInto(int x, int y, int w, int h, int ox, int oy, int ow, int oh);
 void setColor(SDL_Renderer* renderer, string s);
 void GetScreenOpen(SDL_Renderer* renderer);
 void GetScreenWin(SDL_Renderer* renderer);
+void GetScreenLose(SDL_Renderer* renderer);
