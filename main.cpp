@@ -46,13 +46,45 @@ struct Icon
         y += 20;
     }
 };
+struct Wall
+{
+    int x, y, h, w;
+    Wall(int _x, int _y, int _h, int _w) : x(_x), y(_y), h(_h), w(_w)
+    {
 
+    }
+    Wall()
+    {
+
+    }
+    void render(SDL_Renderer* renderer)
+    {
+        SDL_Rect object;
+        object.h = h;
+        object.w = w;
+        object.x = x;
+        object.y = y;
+        setColor(renderer, "Coral");
+        SDL_RenderFillRect(renderer, &object);
+    }
+};
 int main(int argc, char** argv)
 {
     SDL_Window* window;
     SDL_Renderer* renderer;
     initSDL(window, renderer, SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
     Icon icon(25, 25);
+    const int max_wall = 4;
+
+    Wall w[max_wall];
+
+    w[0] = Wall(1, 1, 600, 20);
+
+    w[1] = Wall(60, 1, 20, 960);
+
+    w[2] = Wall(980, 20, 580, 20);
+
+    w[3] = Wall(20, 580, 20, 900);
     waitUntilKeyPressed();
     quitSDL(window, renderer);
 }
