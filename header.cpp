@@ -64,3 +64,10 @@ SDL_Texture* loadTexture(string path, SDL_Renderer* renderer)
     }
     return newTexture;
 }
+bool CrashInto(int x, int y, int w, int h, int ox, int oy, int ow, int oh) // kiểm tra va chạm
+{
+    bool flag = false;
+    if(x + w > ox && x < ox + ow && y + h > oy && y < oy + oh)
+        flag = true;
+    return flag;
+}
