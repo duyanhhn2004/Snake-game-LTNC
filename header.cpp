@@ -133,7 +133,7 @@ void GetScreenOpen(SDL_Renderer* renderer)
     {
         cout << "SDL2_ttf system ready to go!" << endl;
     }
-    TTF_Font* font = TTF_OpenFont("Pixellettersfull-BnJ5.ttf", 40);
+    TTF_Font* font = TTF_OpenFont("pixellettersfull.ttf", 40);
     if(font == nullptr)
     {
         cout << "Could not load font" << endl;
