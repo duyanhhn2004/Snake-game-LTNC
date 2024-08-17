@@ -1,5 +1,6 @@
 #include <iostream>
 #include <SDL.h>
+#include <SDL_mixer.h>
 #include "header.h"
 using namespace std;
 
@@ -228,6 +229,19 @@ int main(int argc, char** argv)
     o[57] = Obstacle (925, 190, 60, 5);
 
     o[58] = Obstacle (925, 190, 5, 55);
+    if(Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+        cout << "Error: " << Mix_GetError() << endl;
+    Mix_Music* bgm = Mix_LoadMUS("kahootlobby_22ea657b5375822.mp3");
+    if(!Mix_PlayingMusic())
+        Mix_PlayMusic(bgm, -1);
+    else if(Mix_PausedMusic())
+        Mix_ResumeMusic();
+    else
+        Mix_PausedMusic();
+
+    GetScreenOpen(renderer);
+    waitUntilKeyPressed();
+    SDL_RenderClear(renderer);
     waitUntilKeyPressed();
     quitSDL(window, renderer);
 }
