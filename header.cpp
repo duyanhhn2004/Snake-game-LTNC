@@ -122,3 +122,62 @@ void setColor(SDL_Renderer* renderer, string s)
         else
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 }
+void GetScreenOpen(SDL_Renderer* renderer)
+{
+    if(TTF_Init() == -1)
+    {
+        cout << "Error: " << TTF_GetError() << endl;
+
+    }
+    else
+    {
+        cout << "SDL2_ttf system ready to go!" << endl;
+    }
+    TTF_Font* font = TTF_OpenFont("Pixellettersfull-BnJ5.ttf", 40);
+    if(font == nullptr)
+    {
+        cout << "Could not load font" << endl;
+        exit(1);
+    }
+    SDL_Color color = {255, 127, 80, 1};
+    SDL_Surface* surface1 = TTF_RenderText_Solid(font, "Help Tony escape the maze", color);
+    SDL_Texture* texture1 = SDL_CreateTextureFromSurface(renderer, surface1);
+
+    SDL_FreeSurface(surface1);
+
+    SDL_Rect rectangle1;
+    rectangle1.x = 50;
+    rectangle1.y = 150;
+    rectangle1.h = 80;
+    rectangle1.w = 900;
+
+    SDL_Surface* surface2 = TTF_RenderText_Solid(font, "Press any key to start!", {255, 127, 80, 1});
+    SDL_Texture* texture2 = SDL_CreateTextureFromSurface(renderer, surface2);
+
+    SDL_FreeSurface(surface2);
+
+    SDL_Rect rectangle2;
+    rectangle2.x = 50;
+    rectangle2.y = 270;
+    rectangle2.h = 80;
+    rectangle2.w = 700;
+
+    SDL_Texture* ending = loadTexture("istockphoto-1146367630-612x612.png", renderer);
+    SDL_RenderCopy(renderer, ending, NULL, NULL);
+
+    SDL_Texture* tony = loadTexture("61zEQWk7LtL-removebg-preview.png", renderer);
+    SDL_Rect Tony;
+    Tony.x = 20;
+    Tony.y = 460;
+    Tony.h = 100;
+    Tony.w = 100;
+    SDL_RenderCopy(renderer, tony, NULL, &Tony);
+
+    SDL_RenderCopy(renderer, texture1, NULL, &rectangle1);
+    SDL_RenderCopy(renderer, texture2, NULL, &rectangle2);
+    SDL_RenderPresent(renderer);
+
+    SDL_DestroyTexture(texture1);
+    SDL_DestroyTexture(texture2);
+    TTF_CloseFont(font);
+}
