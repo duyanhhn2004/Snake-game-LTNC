@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1723880342 source:e:\projectltnc\tony's maze\header.cpp
+	<iostream>
+	<SDL_image.h>
+	"header.h"
+	<SDL.h>
+
+1723880342 e:\projectltnc\tony's maze\header.h
+	<iostream>
+	<SDL.h>
+
+1723880342 source:e:\projectltnc\tony's maze\main.cpp
+	<iostream>
+	<SDL.h>
+	"header.h"
+
