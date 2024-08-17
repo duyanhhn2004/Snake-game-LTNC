@@ -181,3 +181,32 @@ void GetScreenOpen(SDL_Renderer* renderer)
     SDL_DestroyTexture(texture2);
     TTF_CloseFont(font);
 }
+void GetScreenWin(SDL_Renderer* renderer)
+{
+    if(TTF_Init() == -1)
+        cout << "Error: " << TTF_GetError() << endl;
+    else
+        cout << "SDL2_ttf system ready to go!" << endl;
+    TTF_Font* font = TTF_OpenFont("pixellettersfull.ttf", 30);
+    if(font == nullptr)
+    {
+        cout << "Could not load font" << endl;
+        exit(1);
+    }
+    SDL_Color color = {255, 127, 80, 1};
+    SDL_Surface* surface = TTF_RenderText_Solid(font, "Congratulation! You win!!", color);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+    SDL_FreeSurface(surface);
+    SDL_Rect rectangle;
+    rectangle.x = 150;
+    rectangle.y = 200;
+    rectangle.h = 80;
+    rectangle.w = 700;
+
+    SDL_Texture* ending = loadTexture("istockphoto-1146367630-612x612.png", renderer);
+    SDL_RenderCopy(renderer, ending, NULL, NULL);
+
+    SDL_RenderCopy(renderer, texture, NULL, &rectangle);
+    SDL_RenderPresent(renderer);
+}
