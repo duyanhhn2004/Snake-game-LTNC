@@ -139,7 +139,7 @@ void GetScreenOpen(SDL_Renderer* renderer)
         cout << "Could not load font" << endl;
         exit(1);
     }
-    SDL_Color color = {255, 127, 80, 1};
+    SDL_Color color = {255, 127, 80, 255};
     SDL_Surface* surface1 = TTF_RenderText_Solid(font, "Help Tony escape the maze", color);
     SDL_Texture* texture1 = SDL_CreateTextureFromSurface(renderer, surface1);
 
@@ -151,7 +151,7 @@ void GetScreenOpen(SDL_Renderer* renderer)
     rectangle1.h = 80;
     rectangle1.w = 900;
 
-    SDL_Surface* surface2 = TTF_RenderText_Solid(font, "Press any key to start!", {255, 127, 80, 1});
+    SDL_Surface* surface2 = TTF_RenderText_Solid(font, "Press any key to start!", {255, 127, 80, 255});
     SDL_Texture* texture2 = SDL_CreateTextureFromSurface(renderer, surface2);
 
     SDL_FreeSurface(surface2);
@@ -193,7 +193,7 @@ void GetScreenWin(SDL_Renderer* renderer)
         cout << "Could not load font" << endl;
         exit(1);
     }
-    SDL_Color color = {255, 127, 80, 1};
+    SDL_Color color = {255, 127, 80, 255};
     SDL_Surface* surface = TTF_RenderText_Solid(font, "Congratulation! You win!!", color);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 
@@ -222,7 +222,7 @@ void GetScreenLose(SDL_Renderer* renderer)
         cout << "Could not load font" << endl;
         exit(1);
     }
-    SDL_Color color = {255, 127, 80, 1};
+    SDL_Color color = {255, 127, 80, 255};
     SDL_Surface* surface = TTF_RenderText_Solid(font, "Game over!", color);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
 
